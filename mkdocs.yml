@@ -1,5 +1,20 @@
 site_name: InternshipReport
+
 pages:
- - Home: index.md
- - Preface: preface.md
+- Home: index.md
+- Preface: preface.md
+- Introduction: 
+   - Galaxy: intro/galaxy.md
+   - Metavisitor: intro/metavisitor.md
+   - Cluster softwares: intro/cluster.md
+- Materials and Methods: 
+   - Entrez query: matandmet/entrez_query.md
+   - Chosen cluster softwares: matandmet/cluster.md
+   - Galaxy workflow: matandmet/workflow.md
+   - Shell script: matandmet/shell_script.md
+   - Testing 'vir2': matandmet/test.md 
+- Results: results.md
+- Discussion: discussion.md
+- Conclusion: conclusion.md
+
 theme: readthedocs
