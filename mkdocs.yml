@@ -2,8 +2,9 @@ site_name: InternshipReport
 
 pages:
 - Home: index.md
-- Preface: preface.md
+- ARTbio: artbio.md
 - Introduction: 
+   - Introduction: introduction.md
    - Galaxy: intro/galaxy.md
    - Metavisitor: intro/metavisitor.md
    - Cluster softwares: intro/cluster.md
