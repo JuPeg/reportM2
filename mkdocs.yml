@@ -6,11 +6,11 @@ pages:
 - Introduction: 
    - Introduction: introduction.md
    - Galaxy: intro/galaxy.md
-   - Metavisitor: intro/metavisitor.md
+   - Metavisitor: metavisitor.md
    - Cluster softwares: intro/cluster.md
 - Materials and Methods: 
-   - Entrez query: matandmet/entrez_query.md
-   - Chosen cluster softwares: matandmet/cluster.md
+   - Viral sequences reference: matandmet/entrezquery.md
+   - Cluster softwares: matandmet/cluster.md
    - Galaxy workflow: matandmet/workflow.md
    - Shell script: matandmet/shell_script.md
    - Testing 'vir2': matandmet/test.md 
