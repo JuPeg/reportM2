@@ -4,7 +4,9 @@ This is not a new problem. Many have already confronted high redundant databases
 
 ##CD-HIT##
 
-###CD-HIt-EST###
+
+
+###CD-HIT-EST###
 
 ###PSI-CD-HIT###
 

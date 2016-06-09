@@ -1,6 +1,6 @@
 #Retrieve from NCBI#
 
-In order to reduce the reference database, we started reviewing the sequences retrieved from NCBI. The retrieval is done with an Entrez query and an Eutils function.
+In order to reduce the reference database, we started reviewing the sequences retrieved from NCBI. The retrieval is done with an Entrez query and an E-utilities based tool.
 
 ##Entrez query##
 
@@ -53,10 +53,12 @@ The Entrez query with new filters proposed for the Nucleotide database is the fo
 	NCBI contains many viral sequences below 100 nucleotides. These sequences are simutaneously not much informative and quite redundant with the rest of the database. They would increase the processing resources needs without adding results.
 	
 	The Entrez query syntax for defining the Sequences LENgth (SLEN) requires high and low thresholds. So, we define a high threshold that is certainly going to embrace every viral sequence.
+	
+For reasons that are going to be explained afterwards, we will have to retrieve nucleotide sequences in two separated sets. The first datasets will contain only RefSeq entries that will be picked by adding the filter `AND RefSeq[Filter]`. The second includes only non-RefSeq entries which means a `NOT RefSeq[Filter]` must be added in the Entrez query.  
 
 ###Protein database###
 
-The protein database contains sequences from Protein Information Resource (PIR), UniProt/Swiss-Prot and Protein Research Foundation (PRF) as well as amino acid sequences obtained from the coding regions from all nucleotide records also included in Nuccore.
+The protein database contains sequences from Protein Information Resource (PIR), UniProtKB/Swiss-Prot and Protein Research Foundation (PRF) as well as amino acid sequences obtained from the coding regions from all nucleotide records also included in Nuccore.
 
 For the protein dataase, the proposed Entrez query with filter is the following:
 
@@ -86,6 +88,7 @@ For the protein dataase, the proposed Entrez query with filter is the following:
 
 	The thresholds chosen for nucleotide sequences are not convinient for proteins. Protein sequences are shorter. We will consider that the shorter significative sequence has at least 30 amino acids, which is just a bit shorter than the correspondent minimum of 100 nucleotides. To comprise the longest sequences, the high threshold is defined at 10000 amino acids. 
 	
+The protein sequences are also separated in two datasets. The first one, comprising data from curated databases (RefSeq, SwissProt, PIR and PDB), will be retrieved with the extra filter `AND (RefSeq[Filter] OR SwissProt[Filter] OR PIR[Filter] OR PDB[Filter])`. The remaining data belongs to the second set adding to the query: `NOT (RefSeq[Filter] OR SwissProt[Filter] OR PIR[Filter] OR PDB[Filter])`.
 
 ##*Retrieve FASTA from NCBI* tool##
 
