@@ -7,7 +7,7 @@ pages:
    - Introduction: introduction.md
    - Galaxy: intro/galaxy.md
    - Metavisitor: metavisitor.md
-   - Cluster softwares: intro/cluster.md
+   - Reference database: intro/vir1.md
 - Materials and Methods: 
    - Viral sequences reference: matandmet/entrezquery.md
    - Cluster softwares: matandmet/cluster.md
