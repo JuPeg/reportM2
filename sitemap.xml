@@ -3,8 +3,102 @@
 
     
     <url>
-     <loc>None/</loc>
-     <lastmod>2016-06-01</lastmod>
+     <loc>/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/artbio/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/introduction/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/intro/galaxy/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/metavisitor/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/intro/vir1/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>/matandmet/entrezquery/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/matandmet/cluster/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/matandmet/workflow/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/matandmet/shell_script/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/matandmet/test/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/results/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/discussion/</loc>
+     <lastmod>2016-06-13</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/conclusion/</loc>
+     <lastmod>2016-06-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

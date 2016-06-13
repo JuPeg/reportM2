@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Viral sequences reference - InternshipReport</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Viral sequences reference";
+    var mkdocs_page_input_path = "matandmet/entrezquery.md";
+    var mkdocs_page_url = "/matandmet/entrezquery/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> InternshipReport</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../artbio/">ARTbio</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Introduction</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../introduction/">Introduction</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/galaxy/">Galaxy</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../metavisitor/">Metavisitor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../intro/vir1/">Reference database</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Materials and Methods</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Viral sequences reference</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#retrieve-from-ncbi">Retrieve from NCBI</a></li>
+                
+                    <li><a class="toctree-l4" href="#entrez-query">Entrez query</a></li>
+                
+                    <li><a class="toctree-l4" href="#retrieve-fasta-from-ncbi-tool">Retrieve FASTA from NCBI tool</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../cluster/">Cluster softwares</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../workflow/">Galaxy workflow</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../shell_script/">Shell script</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../test/">Testing 'vir2'</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../results/">Results</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../discussion/">Discussion</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../conclusion/">Conclusion</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">InternshipReport</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Materials and Methods &raquo;</li>
+        
+      
+    
+    <li>Viral sequences reference</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="retrieve-from-ncbi">Retrieve from NCBI</h1>
+<p>In order to reduce the reference database, we started reviewing the sequences retrieved from NCBI. The retrieval is done with an Entrez query and an E-utilities based tool.</p>
+<h2 id="entrez-query">Entrez query</h2>
+<p>Entrez search system is a powerful serch mechanism for exploring the NCBI database as it allows focused searches for getting precise results. The Entrez system embraces 39 databases for different types of molecules and literature. In Metavisitor's case, we will interest in two of these datasets: the nucleotide and the protein databases.</p>
+<p>The first version of the reference viral sequences databases for nucleotides and proteins were both called <strong>vir1</strong>. They were retrieved using the the exact same Entrez query, only changing the NCBI database used. The initial commom Entrez query was:</p>
+<p><code>txid10239[Organism] NOT txid131567[Organism] NOT phage[All Fields]</code></p>
+<p>In NCBI, the taxonomy ID (txid) represents a lineage of organisms. IDs can be found in the <a href="http://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi">NCBI Taxonomy Homepage</a>. </p>
+<p>We start getting all the viruses (txid10239) organisms making sure cellular organism (txid131567) and phages are filtered out. The retrieved database is very redundant and contains many poorly annotated sequences.</p>
+<p>Since the following steps are going to be very resource consumming, we need to eliminate in this step as many unwanted sequences as possible. Many reasons can lead a sequence to be undesired in the viral reference database, essentially we want all of them to be informative and to have a human readable header. We studied the retrieved sequences for both databases. Besides some commom filters, they have also their particularities which are explained next.</p>
+<h3 id="nucleotide-database">Nucleotide database</h3>
+<p>The nucleotide database, also called <em>nuccore</em>, includes all sequence data from GenBank, EMBL (European Molecular Biology Laboratory) and DDBJ (DNA Data Bank of Japan). It also contains the Reference Sequences (RefSeq) and nucleotide sequences extracted from structure records from the Protein Databank (PDB).</p>
+<p>The Entrez query with new filters proposed for the Nucleotide database is the following:</p>
+<script src="https://gist.github.com/JuPeg/229773cb099918ebe3e00574e0026dee.js"></script>
+
+<ol>
+<li>
+<p>Patent</p>
+<p>Not only most patent sequences are extremely short (below 100 nucleotides), but also they are predominantly redundant with non-patent sequences. Besides, their title are almost always not representing the source organism.</p>
+</li>
+<li>
+<p>Unverified</p>
+<p>Unverified sequences are sequences marked by GenBank staff as containning issues. In fact Genbank staff are reponsible for verifying the sequences and annotations accuracies. When they can not do it, the sequence is tagged as "UNVERIFIED" in its title until the submitter resolves the problems. These sequences are not included in the BLAST database and they should neither be included in the viral reference database. [^Genbank]</p>
+</li>
+<li>
+<p>Chimeric</p>
+<p>Chimeric sequences are hybrids between two or more different organisms. Only a few vir1 sequences are chimeric. </p>
+</li>
+<li>
+<p>Vector</p>
+<p>A vector is a tool used in molecular biology to deliver genetic material into another cell. They are genetically engeneered from viral or cellular genetic material. Entries containing this word in the title usually present artificial sequences.</p>
+</li>
+<li>
+<p>Method</p>
+<p>Some NCBI entries concern methods for molecular and cellular biology. Their title do not indicate what the sequence is neither its source. There is always some better anottated sequence for the same source organism.</p>
+</li>
+<li>
+<p>Uncultured virus</p>
+<p>Some sequences present "uncultured virus" as their source organism, which does not inform much about the sequence origin.</p>
+</li>
+<li>
+<p>Length</p>
+<p>NCBI contains many viral sequences below 100 nucleotides. These sequences are simutaneously not much informative and quite redundant with the rest of the database. They would increase the processing resources needs without adding results.</p>
+<p>The Entrez query syntax for defining the Sequences LENgth (SLEN) requires high and low thresholds. So, we define a high threshold that is certainly going to embrace every viral sequence.</p>
+</li>
+</ol>
+<p>For reasons that are going to be explained afterwards, we will have to retrieve nucleotide sequences in two separated sets. The first datasets will contain only RefSeq entries that will be picked by adding the filter <code>AND RefSeq[Filter]</code>. The second includes only non-RefSeq entries which means a <code>NOT RefSeq[Filter]</code> must be added in the Entrez query.  </p>
+<h3 id="protein-database">Protein database</h3>
+<p>The protein database contains sequences from Protein Information Resource (PIR), UniProtKB/Swiss-Prot and Protein Research Foundation (PRF) as well as amino acid sequences obtained from the coding regions from all nucleotide records also included in Nuccore.</p>
+<p>For the protein dataase, the proposed Entrez query with filter is the following:</p>
+<script src="https://gist.github.com/JuPeg/506a87a602fffda5ef7459fb8750d931.js"></script>
+
+<ol>
+<li>
+<p>Unverified</p>
+<p>For the same reasons as explained for the nucleotide dataset, unverified sequences are excluded from the reference dataset.</p>
+</li>
+<li>
+<p>Virus-like particles (VLP)</p>
+<p>As described by Brandão <em>et al.</em>, VLPs "are multiprotein structures that mimic the organization and the conformation of authentic native viruses but lack the viral genome". They are used in different fields,  as vaccines, gene therapy and viral protein studies. Since they are not genuine viruses, they are not reference sequences.</p>
+</li>
+<li>
+<p>Chimeric</p>
+<p>For the same reason as the nucleotide database.</p>
+</li>
+<li>
+<p>Vector</p>
+<p>For the same reason as the nucleotide database.</p>
+</li>
+<li>
+<p>Method</p>
+<p>For the same reason as the nucleotide database.</p>
+</li>
+<li>
+<p>Length</p>
+<p>The thresholds chosen for nucleotide sequences are not convinient for proteins. Protein sequences are shorter. We will consider that the shorter significative sequence has at least 30 amino acids, which is just a bit shorter than the correspondent minimum of 100 nucleotides. To comprise the longest sequences, the high threshold is defined at 10000 amino acids. </p>
+</li>
+</ol>
+<p>The protein sequences are also separated in two datasets. The first one, comprising data from curated databases (RefSeq, SwissProt, PIR and PDB), will be retrieved with the extra filter <code>AND (RefSeq[Filter] OR SwissProt[Filter] OR PIR[Filter] OR PDB[Filter])</code>. The remaining data belongs to the second set adding to the query: <code>NOT (RefSeq[Filter] OR SwissProt[Filter] OR PIR[Filter] OR PDB[Filter])</code>.</p>
+<h2 id="retrieve-fasta-from-ncbi-tool"><em>Retrieve FASTA from NCBI</em> tool</h2>
+<p>For retrieving the sequences from NCBI according to the chosen Entrez query, we use a Galaxy tool developed in python and called <em>Retrieve FASTA from NCBI</em>. This tool uses the Entrez Programming Utilities (<a href="http://www.ncbi.nlm.nih.gov/books/NBK25501/">E-utilities</a>) which offers a stable interface connection into the Entrez query and the NCBI databases. </p>
+<p>After connecting with the chosen database (nuccore or protein) and retrieving the sequences by batches, this tool also sanitazes the data by formatting the header and skipping problematic sequences. The skiped sequences are either empty or contain ambiguous nucleotides.</p>
+<hr />
+<p>[^Genbank]: Benson, D. A., Karsch-Mizrachi, I., Clark, K., Lipman, D. J., Ostell, J., &amp; Sayers, E. W. (2012). GenBank. Nucleic Acids Research, 40(D1), 48–53. http://doi.org/10.1093/nar/gkr1202</p>
+<p>[^Roldão]: Roldão, A., Mellado, M. C. M., Castilho, L. R., Carrondo, M. J., &amp; Alves, P. M. (2010). Virus-like particles in vaccine development. Expert Review of Vaccines, 9(10), 1149–1176. http://doi.org/10.1586/erv.10.115</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../cluster/" class="btn btn-neutral float-right" title="Cluster softwares">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../intro/vir1/" class="btn btn-neutral" title="Reference database"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../intro/vir1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../cluster/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
