@@ -1,0 +1,15 @@
+language: python
+python: '2.7'
+sudo: required
+dist: trusty
+env:
+  global:
+  - TOX_ENV=py27
+  - SITE_URL="https://jupeg.github.io/reportM2/"
+  - GH_USER_NAME="Juliana Pegoraro"
+  - GH_USER_EMAIL="juliana.a.pegoraro@gmail.com"
+  - GH_REF="github.com/jupeg/reportM2.git"
+  - secure: AFuO642AuLBRxRtLpJT2rP4sR5oQ75sOGpuE//VA4ffGakRngucjNFl7Nz0hec1EP0EXGZGT5f01dwtQQ37WQUe8Lds7tFvTDrhMHQjoruPQr0QZpbyXP0697RN/ZNRHumpT7o9xO/N/sA9+c2TWbZYQmdG15SEB0Q4KjYrQO+0q44E1usOfSxP+Dml9SWiBFu+09L82FkKZp8RVNVCgMbnqEUT8a9POtGHaS/SdF0UdeRkFbKxfk/aKQxkdsRLutoY7Tw0nu70+KQTXhCNMkfSr+bxm6vL4z0Jur3lL/rnApQ/XeeQmPXERW3FmCl5316Bru6OiWFTp48INAmjQQHvxioZtosNguAtMkGa7FsF8CB+E24rNoHJIfklICMyCIOgmwmfzVlJEZo18Gu3zo+bEswMgGDf1V3EoiXTxPmIku9RPBeqtzTpWUhebc1Co3oOw6xGNIIJB3+Q2Lpbd4A9CEuoT2mOABjDar0EQ38bBZqhVzAdTDlzLQhtGs3HJ5kuh1knpfZWEyRxlfU7N15T/VrwxHN4S/SrXxw3OLY+KDimwoYL1YuOw3KzlfbeWZRtWYrDkFqkqSy/DagNLHPpT/3D5V1H1j7xPwuIZafJE/vioogYjjrzcCDDIjTLrHt7FbcWdWNQjQ6aE+M83UxFPVf9HjSmvoqLb/+x15Wg=
+install: true
+script:
+- bash ./deploy.sh
