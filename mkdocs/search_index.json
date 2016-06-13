@@ -87,7 +87,7 @@
         }, 
         {
             "location": "/matandmet/cluster/", 
-            "text": "Once the sequences have been retrieved with the filters described before, the cluster step can get started. Indeed, the data retrieved is still very redundant. \n\n\nThis is not a new problem. Many have already confronted high redundant databases, so a few tools aiming to solve this are available nowadays. The challenge here was to find the best software to apply in our case.\n\n\nCD-HIT\n\n\nCD-HIT-EST\n\n\nPSI-CD-HIT\n\n\nUCLUST\n\n\nESPRIT-Tree\n\n\n\n\n[^Cai]: Cai, Y., \n Sun, Y. (2011). ESPRIT-Tree: Hierarchical clustering analysis of millions of 16S rRNA pyrosequences in quasilinear computational time. Nucleic Acids Research, 39(14), 1\u201310. http://doi.org/10.1093/nar/gkr349\n\n\n[^Kim]: Kim, M., Lee, K.-H., Yoon, S.-W., Kim, B.-S., Chun, J., \n Yi, H. (2013). Analytical Tools and Databases for Metagenomics in the Next-Generation Sequencing Era. Genomics \n Informatics, 11(3), 102\u2013113.\n\n\n[^Edgar]: Edgar, R. C. (2010). Search and clustering orders of magnitude faster than BLAST. Bioinformatics, 26(19), 2460\u20132461. http://doi.org/10.1093/bioinformatics/btq461\n\n\n[^Fu]: Fu, L., Niu, B., Zhu, Z., Wu, S., \n Li, W. (2012). CD-HIT: Accelerated for clustering the next-generation sequencing data. Bioinformatics, 28(23), 3150\u20133152. http://doi.org/10.1093/bioinformatics/bts565\n\n\n[^Quarst]: Quast, C., Pruesse, E., Yilmaz, P., Gerken, J., Schweer, T., Glo, F. O., \n Yarza, P. (2013). The SILVA ribosomal RNA gene database project : improved data processing and web-based tools. Nucleic Acids Research, 41(November 2012), 590\u2013596. http://doi.org/10.1093/nar/gks1219", 
+            "text": "Once the sequences have been retrieved with the filters described before, the cluster step can get started. Indeed, the data retrieved is still very redundant. \n\n\nThis is not a new problem. Many have already confronted high redundant databases, so a few tools aiming to solve this are available nowadays. The challenge here was to find the best software to apply in our case.\n\n\nCD-HIT\n\n\nCD-HIT-EST\n\n\nPSI-CD-HIT\n\n\nUCLUST\n\n\nVCLUST\n\n\nESPRIT-Tree\n\n\n\n\n[^Cai]: Cai, Y., \n Sun, Y. (2011). ESPRIT-Tree: Hierarchical clustering analysis of millions of 16S rRNA pyrosequences in quasilinear computational time. Nucleic Acids Research, 39(14), 1\u201310. http://doi.org/10.1093/nar/gkr349\n\n\n[^Kim]: Kim, M., Lee, K.-H., Yoon, S.-W., Kim, B.-S., Chun, J., \n Yi, H. (2013). Analytical Tools and Databases for Metagenomics in the Next-Generation Sequencing Era. Genomics \n Informatics, 11(3), 102\u2013113.\n\n\n[^Edgar]: Edgar, R. C. (2010). Search and clustering orders of magnitude faster than BLAST. Bioinformatics, 26(19), 2460\u20132461. http://doi.org/10.1093/bioinformatics/btq461\n\n\n[^Fu]: Fu, L., Niu, B., Zhu, Z., Wu, S., \n Li, W. (2012). CD-HIT: Accelerated for clustering the next-generation sequencing data. Bioinformatics, 28(23), 3150\u20133152. http://doi.org/10.1093/bioinformatics/bts565\n\n\n[^Quarst]: Quast, C., Pruesse, E., Yilmaz, P., Gerken, J., Schweer, T., Glo, F. O., \n Yarza, P. (2013). The SILVA ribosomal RNA gene database project : improved data processing and web-based tools. Nucleic Acids Research, 41(November 2012), 590\u2013596. http://doi.org/10.1093/nar/gks1219", 
             "title": "Cluster softwares"
         }, 
         {
@@ -109,6 +109,11 @@
             "location": "/matandmet/cluster/#uclust", 
             "text": "", 
             "title": "UCLUST"
+        }, 
+        {
+            "location": "/matandmet/cluster/#vclust", 
+            "text": "", 
+            "title": "VCLUST"
         }, 
         {
             "location": "/matandmet/cluster/#esprit-tree", 
