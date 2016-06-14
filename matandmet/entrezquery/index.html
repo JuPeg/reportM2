@@ -7,13 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
   <title>Viral sequences reference - InternshipReport</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
+
   
   <script>
     // Current page data
@@ -26,6 +32,7 @@
   <script src="../../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../../js/highlight.pack.js"></script>
   <script src="../../js/theme.js"></script> 
+
   
 </head>
 
@@ -45,7 +52,7 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
+        <ul class="current">
           
             <li>
     <li class="toctree-l1 ">
@@ -289,6 +296,8 @@
 <h2 id="retrieve-fasta-from-ncbi-tool"><em>Retrieve FASTA from NCBI</em> tool</h2>
 <p>For retrieving the sequences from NCBI according to the chosen Entrez query, we use a Galaxy tool developed in python and called <em>Retrieve FASTA from NCBI</em>. This tool uses the Entrez Programming Utilities (<a href="http://www.ncbi.nlm.nih.gov/books/NBK25501/">E-utilities</a>) which offers a stable interface connection into the Entrez query and the NCBI databases. </p>
 <p>After connecting with the chosen database (nuccore or protein) and retrieving the sequences by batches, this tool also sanitazes the data by formatting the header and skipping problematic sequences. The skiped sequences are either empty or contain ambiguous nucleotides.</p>
+<!-- TODO se conseguir resolver o problema, falar sobre-->
+
 <hr />
 <p>[^Genbank]: Benson, D. A., Karsch-Mizrachi, I., Clark, K., Lipman, D. J., Ostell, J., &amp; Sayers, E. W. (2012). GenBank. Nucleic Acids Research, 40(D1), 48–53. http://doi.org/10.1093/nar/gkr1202</p>
 <p>[^Roldão]: Roldão, A., Mellado, M. C. M., Castilho, L. R., Carrondo, M. J., &amp; Alves, P. M. (2010). Virus-like particles in vaccine development. Expert Review of Vaccines, 9(10), 1149–1176. http://doi.org/10.1586/erv.10.115</p>
@@ -321,7 +330,7 @@
       </div>
 
     </section>
-    
+
   </div>
 
 <div class="rst-versions" role="note" style="cursor: pointer">

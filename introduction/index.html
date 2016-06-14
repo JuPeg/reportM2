@@ -7,13 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../img/favicon.ico">
+  
   <title>Introduction - InternshipReport</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
+
   
   <script>
     // Current page data
@@ -26,6 +32,7 @@
   <script src="../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../js/highlight.pack.js"></script>
   <script src="../js/theme.js"></script> 
+
   
 </head>
 
@@ -45,7 +52,7 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
+        <ul class="current">
           
             <li>
     <li class="toctree-l1 ">
@@ -205,13 +212,12 @@
             <div class="section">
               
                 <h1 id="introduction">Introduction</h1>
-<p>The next-generation sequencing (NGS) technologies, also known as high-throughput sequencing, have developped very fast in the past few years. Between the most known technologies there are Illumina, Roche 454 and SOLiD. These platforms are able to produce over billions of short read data every day. This huge amount of data at lower costs enables deep sequencing and enlarge the application possibilities. [^EMBL-EBI]</p>
-<p>These technologies can, for example, aid the study of metagenomics and the understanding of the host-pathogen interactions. [^Gausson]</p>
+<p>The next-generation sequencing (NGS) technologies, also known as high-throughput sequencing, have developped very fast in the past few years. Between the most known technologies there are Illumina, Roche 454 and SOLiD. These platforms are able to produce over billions of short read data every day. This huge amount of data at lower costs enables deep sequencing and enlarge the application possibilities. [^EMBL-EBI] These technologies can, for example, aid the study of metagenomics and the understanding of the host-pathogen interactions. [^Gausson]</p>
 <p>Viruses present a high diversity in which concern their genomes. Single or double-stranded, RNA or DNA, linear or circular, as well as different types of replication cycles, intermediates and strategies can hamper viral sequencing and detection. For instance, viruses with no DNA stage can not be detected by DNA sequencing and viruses without poly-A tails are not detected by most mRNA sequencing protocols. [^Kreuze][^Carissimo]</p>
 <p>Attempting to avoid this issue and knowing that NGS technologies are suitable for small RNA sequencing, Kreuze <em>et al.</em> proposed in 2009 to use vsiRNA as a solution to virus identification. This approach would enable the identification of virus in low concentration as well as new virus with no prior information. [^Kreuze]</p>
-<p>RNA interference (RNAi) is one of the mechanisms used by plants and invertebrates in gene expression control. Besides silencing endogenous genes, this process is also a potent antiviral pathway. Its main enzyme is called Dicer, which recognises viral RNA. This RNA molecule is then cleaved in smaller RNA duplex called virus-derived small RNA (vsiRNA). [^Sabin] According to previous studies about Dicer's substract, different forms of viral RNA may be a vsiRNA precursor: double-strand RNA (dsRNA) as well as regions in highly structured hairpin in simple-strand RNA (ssRNA) or messenger RNA (mRNA). DNA virus are also directly identified and cleaved by Dicer enzymes. However, ssRNA virus must be transformed in dsRNA before Dicer recognition. [^Aliyari]</p>
+<p>RNA interference (RNAi) is one of the mechanisms used by plants and invertebrates in gene expression control. Besides silencing endogenous genes, this process is also a potent antiviral pathway. The Dicer enzyme mediates this process by recognising the viral RNA which is then cleaved in smaller RNA duplex called virus-derived small RNA (vsiRNA). [^Sabin] According to previous studies about Dicer's substract, different forms of viral RNA may be a vsiRNA precursor: double-strand RNA (dsRNA) as well as regions in highly structured hairpin in simple-strand RNA (ssRNA) or messenger RNA (mRNA). DNA virus are also directly identified and cleaved by Dicer enzymes. However, ssRNA virus must be transformed in dsRNA before Dicer recognition. [^Aliyari]</p>
 <p>According to Gausson and Saleh, vsiRNA molecules indicate the activation of the antiviral response in the host and its abundance reveals the degree of viral replication and gene expression. [^Gausson] Though vsiRNA molecules have a characterisc length (varying from 21 to 23 nucleotides according to the host), the cleavages distribution in the viral genome remains unclear: some virus are cleaved in limited regions while others are targeted through the whole genome. [^Gausson][^Sabin]</p>
-<p>Mapping these small molecules against a reference viral genome can give informations about the nature and the structure of the viral dsRNA. Moreover, as viral genomes evolve fast, it is important to know and identify viral variants for biological and medical researches. It can be conveniently done by scaffolding vsiRNA short sequences into a known similar reference sequence. [^Gausson][^Vodovar]</p>
+<p>Mapping these small molecules against a reference viral genome can give informations about the nature and the structure of the viral dsRNA. Moreover, as viral genomes evolve fast, it is important to know and to identify viral variants for biological and medical researches. It can be conveniently done by scaffolding vsiRNA short sequences into a known similar reference sequence. [^Gausson][^Vodovar]</p>
 <p>Intenting to determine viral variants, Vodovar <em>et al.</em> proposed <em>Paparazzi</em>, a perl script that aims to reconstitute a virus complete genome from vsiRNA and an initial reference sequence as scaffold thanks to an iterative algorithm. The script was tested with small RNA sequencing data from <em>Drosophila melanogaster</em> infected with <em>Nora virus</em>. The study showed that the improved sequence had a higher coverage when compared with the initial <em>Nora virus</em> reference genome. [^Vodovar] With the same goal, SearchSmallRNA is a software developed in java that uses a similar approch. [^Andrade] </p>
 <p>However, both SearchSmallRNA and Paparazzi present the same combination of cons. At first, they demand some computer skills from users for installation and execution. Secondly, they require a close enough sequence to serve as reference for guiding the algorithm. This preclude the identification of new or unexpected viruses. Lastly, these programs are not currently available for download.</p>
 <p>Aiming to release a software able to detect and reconstruct viral genomes from NGS datasets without the problems mentioned above, ARTbio developed Metavisitor, a free and open source set of Galaxy tools and workflows. </p>
@@ -254,7 +260,7 @@
       </div>
 
     </section>
-    
+
   </div>
 
 <div class="rst-versions" role="note" style="cursor: pointer">

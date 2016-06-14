@@ -7,13 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
-  <link rel="shortcut icon" href="../../img/favicon.ico">
+  
   <title>Cluster softwares - InternshipReport</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../../css/highlight.css">
+
   
   <script>
     // Current page data
@@ -26,6 +32,7 @@
   <script src="../../js/modernizr-2.8.3.min.js"></script>
   <script type="text/javascript" src="../../js/highlight.pack.js"></script>
   <script src="../../js/theme.js"></script> 
+
   
 </head>
 
@@ -45,7 +52,7 @@
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
+        <ul class="current">
           
             <li>
     <li class="toctree-l1 ">
@@ -217,14 +224,35 @@
           <div role="main">
             <div class="section">
               
-                <p>Once the sequences have been retrieved with the filters described before, the cluster step can get started. Indeed, the data retrieved is still very redundant. </p>
-<p>This is not a new problem. Many have already confronted high redundant databases, so a few tools aiming to solve this are available nowadays. The challenge here was to find the best software to apply in our case.</p>
+                <p>Once the sequences have been retrieved using filters described before, the cluster step can get started. Indeed, the data retrieved is still very redundant. </p>
+<p>Obviously, redundancy in biological data is not a novelty. Thus, there are a list of tools already developed aiming to reduce or resolve this problem. The question was to choose the software the best adapted to our scenario.</p>
+<p>The issue with clustering sequences is that to compute distances between elements, sequences alignments are required. Biological sequences present deletions, insertions and mutations what makes it quite complex to determine the distances between every sequence. Besides, the sequences length will impact significantly in the time processing required.</p>
+<p>There are two main types of sequence clustering algorthms. </p>
+<p>Most hierarchical clustering algorithms have quadratic space and computation complexities, limitating the amount of data that can be handled. This type of algorithm is known to be more accurate, but they are quite slower.  [^Cai] Some hierarchical clustering algorithm, like ESPRIT-Tree, propose the use of space partition in order to reduce time complexity.</p>
+<!-- explain esprit-tree algorithm ?
+
+Besides, sequences clustering gains in complexity as the sequences must be aligned to compute their distance. Sequences can have mutations, deletions and insertions which makes it complex to find the real distance between sequences.
+
+The are some hierarchical clustering algorithm developed for clustering biological sequences. This algorithms are supposed to present a much better accuracy when compared with greedy heuristic algorithms. However, they tend to be quite slower. In this case, we are using huge database inputs, which requires a long processing time. Luckly, the similarity accuracy is not particular important, since we will be using high similarity threshold. 
+
+"Hence, a sequence can be considered as a data point in a nucleotide space of un-defined dimensions, which poses additional mathematical challenges" Cai and Sun-->
+
+<p>Greedy heuristic clustering are another approach used to cluster sequences. Two of the most famous algorithms are CD-HIT and UCLUST. As a greedy algorithm, they try to approtimate to the global optimal solution in a reasonable time. This means that this algorithms are faster but less accurate than hierarchical clustering algorithms. </p>
+<p>The input sequences are analysed in a determined order. Ordered pairwise alignements will indicate if a sequence is:</p>
+<ol>
+<li>redundant: belongs to a cluster</li>
+<li>representative: none of the previously defined clusters are close two this sequence</li>
+</ol>
+<p>The computational complexity is on the order of O(NM), where N indicates the number of sequences in the input and M is the number of representative sequences. However, this is just a simplification as it does not take into account the sequences length.</p>
+<!--##NRDB##-->
+
 <h2 id="cd-hit">CD-HIT</h2>
 <h3 id="cd-hit-est">CD-HIT-EST</h3>
 <h3 id="psi-cd-hit">PSI-CD-HIT</h3>
 <h2 id="uclust">UCLUST</h2>
 <h2 id="vclust">VCLUST</h2>
 <h2 id="esprit-tree">ESPRIT-Tree</h2>
+<p>This hierarchical clustering algorithm has a quasilinear time and space complexity. It uses a space partition approach </p>
 <hr />
 <p>[^Cai]: Cai, Y., &amp; Sun, Y. (2011). ESPRIT-Tree: Hierarchical clustering analysis of millions of 16S rRNA pyrosequences in quasilinear computational time. Nucleic Acids Research, 39(14), 1–10. http://doi.org/10.1093/nar/gkr349</p>
 <p>[^Kim]: Kim, M., Lee, K.-H., Yoon, S.-W., Kim, B.-S., Chun, J., &amp; Yi, H. (2013). Analytical Tools and Databases for Metagenomics in the Next-Generation Sequencing Era. Genomics &amp; Informatics, 11(3), 102–113.</p>
@@ -260,7 +288,7 @@
       </div>
 
     </section>
-    
+
   </div>
 
 <div class="rst-versions" role="note" style="cursor: pointer">
