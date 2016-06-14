@@ -96,6 +96,8 @@ For retrieving the sequences from NCBI according to the chosen Entrez query, we 
 
 After connecting with the chosen database (nuccore or protein) and retrieving the sequences by batches, this tool also sanitazes the data by formatting the header and skipping problematic sequences. The skiped sequences are either empty or contain ambiguous nucleotides.
 
+<!-- TODO se conseguir resolver o problema, falar sobre-->
+
 ---
 
 [^Genbank]: Benson, D. A., Karsch-Mizrachi, I., Clark, K., Lipman, D. J., Ostell, J., & Sayers, E. W. (2012). GenBank. Nucleic Acids Research, 40(D1), 48–53. http://doi.org/10.1093/nar/gkr1202
