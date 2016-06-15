@@ -1,20 +1,29 @@
 Once the sequences have been retrieved using filters described before, the cluster step can get started. Indeed, the data retrieved is still very redundant. 
 
-Obviously, redundancy in biological data is not a novelty. Thus, there are a list of tools already developed aiming to reduce or resolve this problem. The question was to choose the software the best adapted to our scenario.
+Obviously, redundancy in biological data is not a novelty. Thus, there are a list of tools already developed aiming to reduce or resolve this problem. The question being what software is the best adapted to our scenario.
 
-The issue with clustering sequences is that to compute distances between elements, sequences alignments are required. Biological sequences present deletions, insertions and mutations what makes it quite complex to determine the distances between every sequence. Besides, the sequences length will impact significantly in the time processing required.
+Besides the big amount of data available, another issue with clustering sequences is that to compute distances between elements, sequences alignments are required. Biological sequences present deletions, insertions and mutations what makes it quite complex to determine the distances between every sequence. Besides, the sequences length will impact significantly in the time processing required.
 
-There are two main types of sequence clustering algorthms. 
+There are two main types of sequence clustering algorthms that will be discussed below:
 
-Most hierarchical clustering algorithms have quadratic space and computation complexities, limitating the amount of data that can be handled. This type of algorithm is known to be more accurate, but they are quite slower.  [^Cai] Some hierarchical clustering algorithm, like ESPRIT-Tree, propose the use of space partition in order to reduce time complexity.
+#Hierarchical Clustering#
 
-<!-- explain esprit-tree algorithm ?
+Hierarchical clustering algorithms are applied in many different data fields. Most of them have quadratic space and computation complexities (_O_(n<sup>2</sup>)), which means that the complexity grows quadratically with the number of elements in the dataset. This implies a data size limitation too restrictive for our case. [^Cai] 
 
-Besides, sequences clustering gains in complexity as the sequences must be aligned to compute their distance. Sequences can have mutations, deletions and insertions which makes it complex to find the real distance between sequences.
+##ESPRIT-Tree##
 
-The are some hierarchical clustering algorithm developed for clustering biological sequences. This algorithms are supposed to present a much better accuracy when compared with greedy heuristic algorithms. However, they tend to be quite slower. In this case, we are using huge database inputs, which requires a long processing time. Luckly, the similarity accuracy is not particular important, since we will be using high similarity threshold. 
+Some new algorithms propose methods for reducing its complexity and the processing time. It is the case of ESPRIT-Tree, a recent hierarchcal clustering algorithm that uses the concept of space partition. Unlike most hierarchical clustering algorithms, ESPRIT-Tree does not build a distance matrix, computing distance when needed. It uses a "devide-and conquer-based strategy" which assures a quasilinear complexity.
 
-"Hence, a sequence can be considered as a data point in a nucleotide space of un-defined dimensions, which poses additional mathematical challenges" Cai and Sun-->
+A pseudometric based partition (PBP) tree contains multiple levels uniformly spaced in a logarithmic scale. This tree is built incrementally by adding sequence by sequence in the tree. For each new sequence, its distance to the center of existing nodes will determine its position. If this pairwise distance is greater than a given threshold, a new node is created. Else, the sequence is absorbed inside the node and it is compared with the nodes in the lower level. This process repeats until the new sequences reaches the leafs level. Another new sequence will then be added in the PBP tree. To avoid the risk of overlapping the clusters hyperspaces, the new sequence goes within the first node to match the condition, instead of going within the closest cluster. This step complexity is on the order of _O_(N).
+
+Then, this tree needs to be refined so the closest pairs of clusters stay closer. A naive calculation of distances between every pair of cluster to determine the minima takes _O_(N<sup>2</sup>) operations. However, thanks to the PBP tree, nearest neighbor sequences can be found locally since they are always in the same or adjacent cluster spaces. Taking this advantage, the minimal distances can be found in _O_(log N) time and _O_(N) space using pseudometric space triangular inequalities and the probabilistic Needleman-Wunsch algorithm.
+
+ 
+
+
+<!-- "Hence, a sequence can be considered as a data point in a nucleotide space of un-defined dimensions, which poses additional mathematical challenges" Cai and Sun-->
+
+#Greedy Heuristic Clustering#
 
 Greedy heuristic clustering are another approach used to cluster sequences. Two of the most famous algorithms are CD-HIT and UCLUST. As a greedy algorithm, they try to approtimate to the global optimal solution in a reasonable time. This means that this algorithms are faster but less accurate than hierarchical clustering algorithms. 
 
@@ -39,9 +48,6 @@ The computational complexity is on the order of O(NM), where N indicates the num
 
 ##VCLUST##
 
-##ESPRIT-Tree##
-
-This hierarchical clustering algorithm has a quasilinear time and space complexity. It uses a space partition approach 
 
 
 ---
