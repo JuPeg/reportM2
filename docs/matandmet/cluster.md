@@ -22,15 +22,15 @@ Another improvement implemented by ESPRIT-Tree concerns the paiwise distance cal
 
 To reduce the workload required for doing all the alignements, ESPRIT-Tree also uses the _k_-mer distances strategy. With this method it is possible to avoid many unnecessary alignments in the PBP tree construction and in the clustering refinement. This technique will be discussed in the CD-HIT section.
 
-According to ESPRIT-Tree official [website](http://plaza.ufl.edu/sunyijun/ES-Tree.htm), the software is being optimized and a beta version is available upon request.
+According to ESPRIT-Tree official [website](http://plaza.ufl.edu/sunyijun/ES-Tree.htm), the software is being optimized and a beta version is available upon request. Yet, our request never got an answer from the author.
 
 #Greedy Heuristic Clustering#
 
 Greedy heuristic clustering are another approach used to cluster sequences. Two of the most used algorithms are CD-HIT and UCLUST. As greedy algorithms, they try to approximate the global optimal solution in a reasonable time comsuption. These algorithms are mostly faster than hierarchical clustering algorithms, but they tend to be less accurate. 
 
-The input sequences are processed sequentially by the algorithm. Already treated sequences can be of two types: representative or redundant. Redundant sequences are illustrated by representative sequences, so, they can be excluded from further analyzes. Every new sequence is compared with the representative sequences. If the pairwise distance is smaller than a given threshold, than the new sequence is considered redundant. Otherwise, it is a representative sequence that will be part of following analyzes.
+The input sequences are processed sequentially by the algorithm. Already processed sequences can be of two types: representative or redundant. Redundant sequences are illustrated by representative sequences, so, they can be excluded from further analyzes. Every new sequence is compared with the representative sequences. If the pairwise distance is smaller than a given threshold, than the new sequence is considered redundant. Otherwise, it is a representative sequence that will be part of following analyzes.
 
-The process described is a  is is the main process followed by this class of clustering algorithms. However, different software presents particularities in its methods and definitions. This differences will be detailed below.
+The process described is the main process followed by this class of clustering algorithms. However, different software presents particularities in its methods and definitions. This differences will be detailed below.
 
 Overall, these algorithms' computational complexity is on the order of _O_(NM), where N indicates the number of sequences in the input and M is the number of representative sequences. Therefore, their resources consuption is quite hard to predict since the data redundancy may be unknown until the algorithm is run.
 
@@ -39,23 +39,46 @@ Overall, these algorithms' computational complexity is on the order of _O_(NM), 
 
 <!--##NRDB##-->
 
-##CD-HIT##
+##CD-HIT and CD-HIT-EST##
 
 Originally developped to protein sequences clustering in 2001, this software was extended for nucleotides sequences in 2006. The algorithm supporting nucleotides clustering received the name CD-HIT-EST. CD-HIT package also includes many other programs and perl scripts used to compare two databases, identify overlapping reads, etc. Since 2012, CD-HIT can run in multiple-thread, reducing the database size limitations.[^Li] CD-HIT's informations were retrieved from its [user's guide](https://github.com/weizhongli/cdhit/blob/master/doc/cdhit-user-guide.wiki). 
 
-CD-HIT's algorithm starts by ordering the sequences from the longest to the shortest. The longest sequence is automatically a representative sequence. Then, as explained before, every other sequence will be classified as redundant or representative accordig to the sequences already classified as representative. The user can choose if redundant sequences should go to the first matching cluster (fast mode) or to the closest cluster after comparison with all representative sequences (accurate mode).
+CD-HIT's algorithm starts by ordering the sequences from the longest to the shortest. The longest sequence is automatically a representative sequence. Then, as explained before, every other sequence will be classified as redundant or representative according to the sequences already classified as representative. The user can choose if redundant sequences should go to the first matching cluster (fast mode) or to the closest cluster after comparison with all representative sequences (accurate mode).
 
-One of the principal heuristics used by CD-HIT is the short word or _k_-mer filter. A short word or _k_-mer is is a small sequence of _k_ nucleotides (for DNAs) or amino acids (for proteins) that is used in many situations to accelerate some computational processes. Every sequence contains L-k+1 _k_-mers which can repeat over the sequence. There are 4<sup>_k_</sup> possible unique _k_-mers in nucleotide sequences and 20<sup>_k_</sup> in proteins using the standard amino acid alphabet.
+For speeding up its execution, CD-HIT uses a heuristic for reducing the amount of alignments. It consists in choosing which pairwise alignments are worth computing according to the common short words.
 
-The insight with _k_-mers in alignement methods is that there is a correlation between the quantity of common _k_-mers in different sequences and the identity between them. So, following previous studies of real alignments, they were able to determine statistically the common _k_-mers distribution according to the sequence lengths and identities.
+A short word or k-mer is a small sequence of k nucleotides (for DNAs) or amino acids (for proteins) from a bigger sequence. A linear sequence contains L-k+1 k-mers, where L is the sequence length. The combination and the repeatition of those k-mers vary from sequence to sequence and that is the big advantage of using short word filters.
 
-CD-HIT uses _k_ from 2 to 5 for proteins and from 8 to 12 for DNAs. These values represent an amount of unique _k_-mers that can be stored in computer memory.
+At first, an index table for the whole database must be built. Every unique k-mer has a unique index that indicates how many times this k-mer appears within each sequence. Then, thanks to previous studies on real alignments, we know statistically how many common k-mers two sequences must have so they share a particular identity. If the number of common k-mers is too low, than the algorithm can predict these sequences are not similar without performing the alignment.
 
-###CD-HIT-EST###
+This process means a significant gain in the algorithm's efficiency, since accessing information in a index table can be done quite fast. Besides, CD-HIT uses a k from 2 to 5 for proteins and a k from 8 to 12 for DNA, making sure all unique k-mers can be indexed in computer memory. For instance, there are, at most, 4<sup>12</sup> = 16M different k-mers with k=12. The suggested k value for each identity range is indicated in the user's manual.
 
-###PSI-CD-HIT###
+However, as the quantity of common k-mers needed vary according to sequences length and alignment identities, the CD-HIT algorithm presents some limitations. With too long sequences or for too small identities thresholds, common k-mers counting are no longer good predictors. For this reason, CD-HIT suggests a identity minima between protein sequences at 40% and CD-HIT-EST suggests 75% for nucleotide sequences. For other cases (low identity or genome sized sequences), CD-HIT proposes the PSI-CD-HIT script.
+
+PSI-CD-HIT is a perl script that can be used for both protein and nucleotide sequences. Its algorithm is similat to CD-HIT and CD-HIT-EST's, but it does not use the k-mers filters. Each sequence is compared to the representative sequences identified so far through BLAST (blastp, blastn or megablast). Thus, it is less efficient and it is only recomended for those particular cases where the classic programs are inadequate. 
+
+###CD-HIT's outputs###
+
+CD-HIT's algorithms output two files. One is a fasta file containing all the dataset representative sequences. The other is a clstr file where each sequence cluster is described. A ">" starts a cluster description and is followed by the cluster id. The following lines present sequences informations (id, length, header and identity). The "*" indicates the representative sequence, every other sequence inside a cluster is redundant with the representative.
+
+The following clstr example was extrated from the user's manual:
+
+```
+>Cluster 00 2799aa, >PF04998.6|RPOC2_CHLRE/275-3073... *>Cluster 10 2214aa, >PF06317.1|Q6Y625_9VIRU/1-2214... at 80%1 2215aa, >PF06317.1|O09705_9VIRU/1-2215... at 84%2 2217aa, >PF06317.1|Q6Y630_9VIRU/1-2217... *3 2216aa, >PF06317.1|Q6GWS6_9VIRU/1-2216... at 84%4 527aa, >PF06317.1|Q67E14_9VIRU/6-532... at 63%
+```
+Another CD-HIT limitation is that its output is influenced by the input sequences order.
 
 ##UCLUST##
+
+UCLUST's algorithm is part of the USEARCH package. Its binary files are available upon request in its [website](http://drive5.com/usearch/). The 32-bit version is free, including for commercial uses. However, unlike the 64-bit paid version, it has a limitation of 4Gb RAM. User's manual is available in the [website](http://drive5.com/usearch/manual/). 
+
+In UCLUST, representative sequences are called centroids. They were once called seeds too, but this term is now obsolet. Centroids are in the center of the cluster which is represented by a circle of radius equal to the identity threshold. UCLUST can be used to both protein and nucleotide sequences. There are two clustering algorithms: cluster_fast and cluster_smallmem. Cluster_fast can sort the input sequences by decreasing length or decreasing abundance before clustering. Cluster_smallmem, contrarily, only processes the input in the order they are given.
+
+The main difference from CD-HIT's algorithm is the sequences comparison. UCLUST uses the USEARCH algorithm. This algorithm also uses short word filters but in a slightly different way. Each new sequence must be compared to centroids in a particular order. In fact centroids sequences are sorted by decreasing unique word count, that is, centroids that have more common unique k-mers are going to be aligned to the new sequence first. This means that the first time a pairwise alignment is found, it is likely to be the best alignment in the database. Plus, the more comparisons are done without finding a hit, the less likely it is that a hit exists in the database. This represents a big gain in efficiency. In fact, there might be no need to align a new sequence to every centroid before realizing it is not redundant.
+
+- memory limitation
+
+###UCLUST's outputs###
 
 ##VCLUST##
 
@@ -63,7 +86,8 @@ CD-HIT uses _k_ from 2 to 5 for proteins and from 8 to 12 for DNAs. These values
 
 #Viral reference database case#
 
-- Show graphic from ESPRIT-Tree paper that shows time comsumption
+- Show graphic from ESPRIT-Tree paper that shows time comsumption + my predictions
+- Test cd-hit parallelization
 - Explain that we care more about rapidity than accuracy
 - Talk about database size and length distribution
 
