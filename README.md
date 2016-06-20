@@ -1,1 +1,1 @@
-# reportM2
+Read the full report at: http://jupeg.github.io/reportM2/
